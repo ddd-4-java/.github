@@ -38,37 +38,17 @@
 
 ## 构件矩阵
 
-### 核心域（Domain Layer）
+### 核心仓库
 
-| 构件 | 说明 |
-|------|------|
-| 待发布 | `Entity`、`ValueObject`、`AggregateRoot`、`DomainEvent` |
-| 待发布 | `EntityId`（强类型 ID）、`Identifier` 策略 |
-| 待发布 | `Specification` 规约模式、`DomainService` 领域服务基类 |
+| 仓库 | groupId | 说明 |
+|------|---------|------|
+| [`ddd4j`](https://github.com/ddd-4-java/ddd4j) | `io.ddd4j` | 核心 DDD 构件：Entity / Aggregate / DomainEvent / Repository / CQRS |
+| [`ddd4j-boot`](https://github.com/ddd-4-java/ddd4j-boot) | `io.ddd4j.boot` | Spring Boot 集成：44+ Starter、auth/cache/data/ddd 等模块 |
+| [`ddd4j-javalin`](https://github.com/ddd-4-java/ddd4j-javalin) | `io.ddd4j.javalin` | Javalin 集成：auth/cache/data/ddd 等模块 |
+| [`ddd4j-quarkus`](https://github.com/ddd-4-java/ddd4j-quarkus) | `io.ddd4j.quarkus` | Quarkus 集成：auth/cache/data/ddd 等模块 |
+| [`ddd4j-ai`](https://github.com/ddd-4-java/ddd4j-ai) | `io.ddd4j.ai` | AI 核心契约与组件（规划中） |
 
-### 应用层（Application Layer）
-
-| 构件 | 说明 |
-|------|------|
-| 待发布 | `Command`、`CommandHandler`、`CommandBus` |
-| 待发布 | `Query`、`QueryHandler`、`QueryBus` |
-| 待发布 | `ApplicationService` 编排基类、`UseCase` 接口 |
-
-### 基础设施层（Infrastructure Layer）
-
-| 构件 | 说明 |
-|------|------|
-| 待发布 | `Repository` SPI（JPA / MyBatis-Plus / R2DBC 适配器） |
-| 待发布 | `EventBus`（Spring Event / Kafka / RocketMQ） |
-| 待发布 | `SnapshotStore` 聚合快照存储 |
-
-### CQRS 与事件溯源
-
-| 构件 | 说明 |
-|------|------|
-| 待发布 | `EventStore`（基于 JDBC / MongoDB） |
-| 待发布 | `Saga` / `ProcessManager` 长流程编排 |
-| 待发布 | `Projection` 读模型构建器 |
+> ⚠️ 所有仓库均为 **private** —— 当前只对组织成员可见，正在积极重构中。
 
 ---
 
@@ -99,23 +79,18 @@
 
 ## 快速开始
 
-> ⏳ 项目处于筹备阶段，欢迎在 [Discussions](https://github.com/orgs/ddd-4-java/discussions) 提交需求与共建提案。
+> ⚠️ **当前状态**：所有仓库正在积极重构中。Maven Central 尚未发布。欢迎关注进度或参与共建。
 
-### Maven 依赖（规划中）
+### Maven 依赖（暂未发布到 Maven Central）
 
-```xml
-<dependency>
-    <groupId>org.ddd-4-java</groupId>
-    <artifactId>ddd-core</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
-</dependency>
+当前仓库均为 **private**，正在重构。**正式版发布前请勿依赖**。
 
-<dependency>
-    <groupId>org.ddd-4-java</groupId>
-    <artifactId>ddd-cqrs</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
-</dependency>
-```
+一旦重构完成，会通过以下方式分发：
+
+- **Maven Central**：`io.ddd4j:ddd4j-core:VERSION`
+- **JitPack**：用于早期尝鲜的快照版本
+
+跟踪进度：[Discussions](https://github.com/orgs/ddd-4-java/discussions) · [ddd4j Issues](https://github.com/ddd-4-java/ddd4j/issues)
 
 ---
 
